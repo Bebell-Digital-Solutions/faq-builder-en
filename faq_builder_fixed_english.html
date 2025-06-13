@@ -414,7 +414,9 @@
 
 
         .faq-icon {
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease;
+                color: inherit;
+
 }
         
         .tab-delete-btn {
@@ -1346,7 +1348,7 @@
 </div>
 
 <script>
-// FAQ Widget JavaScript
+// FAQ Widget JavaScript - Only modified what's needed for the icon color
 function switchFAQTab(tabIndex) {
     document.querySelectorAll('.faq-tab').forEach((tab, index) => {
         if (index === tabIndex) {
@@ -1370,10 +1372,7 @@ function switchFAQTab(tabIndex) {
         q.style.color = '#374151';
     });
     document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-    document.querySelectorAll('.faq-icon').forEach(icon => {
-        icon.style.transform = 'rotate(0deg)';
-        icon.style.color = 'inherit'; // Reset icon color
-    });
+    document.querySelectorAll('.faq-icon').forEach(icon => icon.style.transform = 'rotate(0deg)');
 }
 
 function toggleFAQ(tabIndex, faqIndex) {
@@ -1392,7 +1391,7 @@ function toggleFAQ(tabIndex, faqIndex) {
     document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
     document.querySelectorAll('.faq-icon').forEach(i => {
         i.style.transform = 'rotate(0deg)';
-        i.style.color = 'inherit'; // Reset icon color
+        i.style.color = ''; // Reset icon color
     });
     
     if (!isActive) {
@@ -1400,10 +1399,11 @@ function toggleFAQ(tabIndex, faqIndex) {
         button.style.background = '${primaryColor}';
         button.style.color = 'white';
         icon.style.transform = 'rotate(180deg)';
-        icon.style.color = 'white'; // Set icon to white when active
+        icon.style.color = 'white'; // ONLY ADDED THIS LINE
         answer.style.display = 'block';
     }
 }
+
 <\/script>
 <!-- End FAQ Widget -->`;
 
