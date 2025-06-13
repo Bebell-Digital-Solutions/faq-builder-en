@@ -411,6 +411,11 @@
             white-space: normal;
             hyphens: auto;
         }
+
+
+        .faq-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
         
         .tab-delete-btn {
             width: 20px;
@@ -510,6 +515,9 @@
         .copy-btn:hover {
             background: #4b5563;
         }
+
+
+        
         
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -525,11 +533,16 @@
             .customization-sidebar {
                 width: 280px;
             }
+
+
+            
             
             .faq-card {
                 flex: 1 1 100%;
             }
         }
+
+        
         
         /* Empty State */
         .empty-state {
@@ -541,6 +554,9 @@
             margin-bottom: 0.5rem;
             color: #374151;
         }
+
+
+        
         
         /* Overlay */
         .sidebar-overlay {
@@ -553,9 +569,15 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+
+
+        
         .sidebar-overlay.active {
             display: block;
         }
+
+
+        
         
         /* Footer Styles */
         .footer {
@@ -568,9 +590,14 @@
             color: #6c757d;
         }
 
+
+        
         .footer p {
             margin: 0;
         }
+
+
+        
     </style>
 </head>
 
@@ -1343,12 +1370,15 @@ function switchFAQTab(tabIndex) {
         q.style.color = '#374151';
     });
     document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-    document.querySelectorAll('.faq-icon').forEach(icon => icon.style.transform = 'rotate(0deg)');
+    document.querySelectorAll('.faq-icon').forEach(icon => {
+        icon.style.transform = 'rotate(0deg)';
+        icon.style.color = 'inherit'; // Reset icon color
+    });
 }
 
 function toggleFAQ(tabIndex, faqIndex) {
     const button = event.target.closest('.faq-question');
-    const answer = document.querySelector(\`.faq-answer[data-tab="\${tabIndex}"][data-faq="\${faqIndex}"]\`);
+    const answer = document.querySelector(`.faq-answer[data-tab="${tabIndex}"][data-faq="${faqIndex}"]`);
     const icon = button.querySelector('.faq-icon');
     
     const isActive = button.classList.contains('active');
@@ -1360,18 +1390,26 @@ function toggleFAQ(tabIndex, faqIndex) {
         q.style.color = '#374151';
     });
     document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-    document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+    document.querySelectorAll('.faq-icon').forEach(i => {
+        i.style.transform = 'rotate(0deg)';
+        i.style.color = 'inherit'; // Reset icon color
+    });
     
     if (!isActive) {
         button.classList.add('active');
         button.style.background = '${primaryColor}';
         button.style.color = 'white';
         icon.style.transform = 'rotate(180deg)';
+        icon.style.color = 'white'; // Set icon to white when active
         answer.style.display = 'block';
     }
 }
 <\/script>
 <!-- End FAQ Widget -->`;
+
+
+
+        
         
         return html;
     }
@@ -1386,6 +1424,8 @@ function toggleFAQ(tabIndex, faqIndex) {
                 btn.textContent = originalText;
             }, 2000);
         }).catch(() => {
+            
+            
             // Fallback for older browsers
             const textArea = document.createElement('textarea');
             textArea.value = code;
@@ -1402,6 +1442,11 @@ function toggleFAQ(tabIndex, faqIndex) {
             }, 2000);
         });
     }
+
+
+
+
+    
     
     function closeCodeModal() {
         document.getElementById('code-modal').style.display = 'none';
@@ -1412,11 +1457,13 @@ function toggleFAQ(tabIndex, faqIndex) {
         return state.tabs.find(tab => tab.id === state.activeTab);
     }
     
+    
     function escapeHtml(text) {
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
     }
+    
     
     // Event Listeners
     document.addEventListener('click', function(e) {
@@ -1424,6 +1471,8 @@ function toggleFAQ(tabIndex, faqIndex) {
             e.target.style.display = 'none';
         }
     });
+
+    
     
     // Handle Enter key in inputs
     document.addEventListener('keydown', function(e) {
