@@ -1158,7 +1158,7 @@ padding: 20px;
         const currentTab = getCurrentTab();
         
         if (currentTab.faqs.length === 0) {
-            container.innerHTML = '<div class="empty-state"><p>No ninguna pregunta agregada aún. Haz Clic en "Agregar Pregunta" para iniciar.</p></div>';
+            container.innerHTML = '<div class="empty-state"><p>Haz Clic en "Añadir Pregunta" para empezar.</p></div>';
             return;
         }
         
@@ -1189,7 +1189,7 @@ padding: 20px;
             preview.innerHTML = `
                 <div class="empty-state">
                     <h3>¡FAQ sin contenido!</h3>
-                    <p>Agrega pregunntas y sus respuestas para visualizarlo aquí.</p>
+                    <p>Agrega preguntas y sus respuestas para visualizarlo aquí.</p>
                 </div>
             `;
             return;
