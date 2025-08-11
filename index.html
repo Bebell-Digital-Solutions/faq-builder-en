@@ -4,12 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ Builder - Create Embeddable FAQ Sections</title>
+    
+    
+             <!-- Favicon -->
+  <link rel="icon" href="https://bucket.mlcdn.com/a/3336/3336910/images/8693866308ced9e7451285a4fc716d1d589c8bc4.png">    
+
+
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
+        
+      .custom-image-widget {
+      position: fixed !important;
+      top: 0px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      right: 0px;
+      z-index: 999;
+    }
+    
+    .custom-image {
+      width: 70px;
+      height: auto;
+      transition: transform 0.2s;
+    }
+    
+    .custom-image-widget:hover .custom-image {
+      transform: scale(1.05);
+    }         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: #f8fafc;
@@ -19,20 +56,21 @@
         .container {
             max-width: 1400px;
             margin: 0 auto;
+            margin-top: 50px;
             padding: 20px;
         }
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: white;
+            background: transparent;
             padding: 1rem 2rem;
             border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+           
             margin-bottom: 20px;
         }
         .header h1 {
-            color: #DF1783;
+            color: #df1783;
             font-size: 1.8rem;
             font-weight: 700;
         }
@@ -103,8 +141,15 @@
         .brand-text {
             font-size: 1.7em;
             font-weight: bold;
-            color: #df1783;
+            color: #000;
         }
+        
+        
+        
+        
+        
+        
+        
         
         /* Editor Panel Styles */
         .editor-section {
@@ -200,6 +245,11 @@
             background: #ef4444;
             color: white;
         }
+        
+        
+        
+        
+        
         /* Customization Sidebar */
         .customization-sidebar {
             position: fixed;
@@ -307,6 +357,12 @@
             background: white;
         }
         
+        
+        
+        
+        
+        
+        
         /* FAQ Widget Styles */
         .faq-widget {
             max-width: 100%;
@@ -388,6 +444,12 @@
             transform: rotate(180deg);
         }
         
+        
+        
+        
+        
+        
+        
         /* FAQ Cards Style */
         .faq-cards {
             display: flex;
@@ -439,6 +501,11 @@
             align-items: center;
             margin-right: 8px;
         }
+        
+        
+        
+        
+        
         
         /* Modal Styles */
         .modal {
@@ -557,6 +624,15 @@
             display: block;
         }
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
         /* Footer Styles */
         .footer {
             background-color: #f8f9fa;
@@ -656,12 +732,28 @@ padding: 20px;
 </head>
 
 <body>
+
+
+   
+       <div class="custom-image-widget" style="position: relative; display: inline-block;"> <!-- ADD THESE STYLES -->
+    <a href="https://bebell-digital-solutions.github.io/magic-toolbox-database/en-v03">
+        <img class="custom-image" 
+             src="https://bucket.mlcdn.com/a/3336/3336910/images/81299ab4b3def01be268d66464324457d20931ac.gif" 
+             alt="English Translation"
+             style="display: block;"> <!-- Ensure image is block-level -->
+    </a>
+
+</div>
+
+
+
+
     <div class="container">
         <!-- Header -->
         <div class="header">
             <div class="brand">
-                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/2a926c37fc929607aeed2f835f3a06e0e9f3cff8.png" alt="VibeCoding Studio Logo" class="brand-logo">
-                <span class="brand-text">FAQ Builder</span>
+                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/c506fa1172c62b4aeed105882b84095ade5e6a2a.png" alt="VibeCoding Studio Logo" class="brand-logo">
+                <span class="brand-text">FAQ Generator</span>
             </div>
             <h1></h1>
             <div class="header-buttons">
