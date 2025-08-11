@@ -736,36 +736,36 @@ padding: 20px;
         <div class="header">
             <div class="brand">
                 <img src="https://bucket.mlcdn.com/a/3336/3336910/images/c506fa1172c62b4aeed105882b84095ade5e6a2a.png" alt="VibeCoding Studio Logo" class="brand-logo">
-                <span class="brand-text">FAQ Generator</span>
+                <span class="brand-text">Generador de FAQ</span>
             </div>
             <h1></h1>
             <div class="header-buttons">
-                <button class="btn btn-secondary" onclick="toggleCustomization()">🎨 Customize</button>
-                <button class="btn btn-primary" onclick="generateCode()">📋 Get Code</button>
+                <button class="btn btn-secondary" onclick="toggleCustomization()">🎨 Personalizar</button>
+                <button class="btn btn-primary" onclick="generateCode()">📋 Conseguir Código</button>
             </div>
         </div>
         
-        <!-- Main Layout -->
+       <!-- Main Layout -->
         <div class="main-layout">
             <!-- Editor Panel -->
             <div class="panel">
                 <div class="panel-header">
-                    📝  FAQ Editor
+                    📝 Editor de FAQ
                 </div>
                 <div class="panel-content" id="editor-content">
                     <div class="editor-section">
-                        <div class="section-title">FAQ Tabs</div>
+                        <div class="section-title">Pestañas de FAQ</div>
                         <div class="tab-list" id="tab-list">
                             <button class="tab-button active" data-tab="0">General</button>
                         </div>
-                        <button class="btn btn-secondary" onclick="addTab()">+ Add Tab</button>
+                        <button class="btn btn-secondary" onclick="addTab()">+ Añadir Pestaña</button>
                     </div>
                     <div class="editor-section">
-                        <div class="section-title">Questions & Answers</div>
+                        <div class="section-title">Preguntas y Respuestas</div>
                         <div id="faq-items">
                             <!-- FAQ items will be inserted here -->
                         </div>
-                        <button class="btn btn-primary" onclick="addFAQItem()">+ Add Question</button>
+                        <button class="btn btn-primary" onclick="addFAQItem()">+ Añadir Pregunta</button>
                     </div>
                 </div>
             </div>
@@ -773,41 +773,33 @@ padding: 20px;
             <!-- Preview Panel -->
             <div class="panel">
                 <div class="panel-header">
-                    🔎  Preview
+                    🔎 Vista Previa
                 </div>
                 <div class="panel-content">
                     <div class="preview-container">
                         <div id="preview-widget" class="faq-widget">
                             <div class="empty-state">
-                                <h3>No questions yet</h3>
-                                <p>Add some questions and answers to see the preview</p>
+                                <h3>No hay preguntas aún</h3>
+                                <p>Añade algunas preguntas y respuestas para ver la vista previa</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-      
         
         <!-- Customization Sidebar -->
         <div class="sidebar-overlay" onclick="toggleCustomization()"></div>
         <div id="customization-sidebar" class="customization-sidebar">
             <div class="customization-header">
-                <h3>🎨 Customize FAQ</h3>
+                <h3>🎨 Personalizar FAQ</h3>
                 <button class="close-btn" onclick="toggleCustomization()">&times;</button>
             </div>
             
             <div class="customization-content">
                 <!-- Color Customization -->
                 <div class="customization-section">
-                    
-                    
-                    
-                    
-                    <label>🎨 Primary Color</label>
+                    <label>🎨 Color Principal</label>
                     <div class="color-grid">
                         <div class="color-swatch active" style="background: #DF1783" data-color="#DF1783"></div>
                         <div class="color-swatch" style="background: #3B82F6" data-color="#3B82F6"></div>
@@ -818,11 +810,6 @@ padding: 20px;
                         <div class="color-swatch" style="background: #06B6D4" data-color="#06B6D4"></div>
                         <div class="color-swatch" style="background: #84CC16" data-color="#84CC16"></div>
                     </div>
-                    
-                    
-                    
-                    
-                    
                     <div style="margin-top: 10px;">
                         <input type="color" id="custom-color" value="#DF1783" onchange="updatePrimaryColor(this.value)" style="width: 100%; height: 40px; border: none; border-radius: 6px;">
                     </div>
@@ -830,45 +817,44 @@ padding: 20px;
                 
                 <!-- Typography -->
                 <div class="customization-section">
-                    <label>📝 Typography</label>
+                    <label>📝 Tipografía</label>
                     <div class="slider-container">
-                        <label style="font-size: 12px; color: #666;">Font size: <span id="font-size-value">16</span>px</label>
+                        <label style="font-size: 12px; color: #666;">Tamaño de fuente: <span id="font-size-value">16</span>px</label>
                         <input type="range" class="slider" id="font-size-slider" min="12" max="24" value="16" oninput="updateFontSize(this.value)">
                     </div>
                 </div>
                 
-                
                 <!-- Display Style -->
                 <div class="customization-section">
-                    <label>🔧 Display Style</label>
+                    <label>🔧 Estilo de Visualización</label>
                     <div class="style-options">
                         <div class="style-option active" onclick="setDisplayStyle('accordion')" data-style="accordion">
-                            Accordion
+                            Acordeón
                         </div>
                         <div class="style-option" onclick="setDisplayStyle('card')" data-style="card">
-                            Cards
+                            Tarjetas
                         </div>
                     </div>
                 </div>
                 
                 <!-- Spacing -->
                 <div class="customization-section">
-                    <label>📏 Spacing</label>
+                    <label>📏 Espaciado</label>
                     <div class="slider-container">
-                        <label style="font-size: 12px; color: #666;">Spacing: <span id="spacing-value">16</span>px</label>
+                        <label style="font-size: 12px; color: #666;">Espaciado: <span id="spacing-value">16</span>px</label>
                         <input type="range" class="slider" id="spacing-slider" min="8" max="32" value="16" step="4" oninput="updateSpacing(this.value)">
                     </div>
                 </div>
                 
                 <!-- Border & Shape -->
                 <div class="customization-section">
-                    <label>🔲 Borders & Shape</label>
+                    <label>🔲 Bordes y Forma</label>
                     <div class="slider-container">
-                        <label style="font-size: 12px; color: #666;">Border radius: <span id="border-radius-value">8</span>px</label>
+                        <label style="font-size: 12px; color: #666;">Radio de borde: <span id="border-radius-value">8</span>px</label>
                         <input type="range" class="slider" id="border-radius-slider" min="0" max="20" value="8" step="2" oninput="updateBorderRadius(this.value)">
                     </div>
                     <div class="slider-container">
-                        <label style="font-size: 12px; color: #666;">Border width: <span id="border-width-value">1</span>px</label>
+                        <label style="font-size: 12px; color: #666;">Ancho de borde: <span id="border-width-value">1</span>px</label>
                         <input type="range" class="slider" id="border-width-slider" min="0" max="4" value="1" step="1" oninput="updateBorderWidth(this.value)">
                     </div>
                 </div>
@@ -876,29 +862,27 @@ padding: 20px;
                 <!-- Reset -->
                 <div class="customization-section">
                     <button class="btn btn-secondary" onclick="resetToDefaults()" style="width: 100%;">
-                        ↺ Reset to Defaults
+                        ↺ Restablecer Valores
                     </button>
                 </div>
             </div>
         </div>
     </div>
     
-    
-    
     <!-- Code Generation Modal -->
     <div id="code-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">🎉 Generated Code</h2>
+                <h2 class="modal-title">🎉 Código Generado</h2>
                 <button class="close-btn" onclick="closeCodeModal()">&times;</button>
             </div>
-            <p>Copy this code and paste it into your website where you want the FAQ to appear:</p>
+            <p>Copia este código y pégalo en tu sitio web donde quieras que aparezca el FAQ:</p>
             <div class="code-block" id="generated-code">
-                <button class="copy-btn" onclick="copyCode()">Copy</button>
+                <button class="copy-btn" onclick="copyCode()">Copiar</button>
                 <pre id="code-content"></pre>
             </div>
             <div style="margin-top: 1rem;">
-                <small style="color: #6b7280;">This code is self-contained and requires no external dependencies.</small>
+                <small style="color: #6b7280;">Este código es autónomo y no requiere dependencias externas.</small>
             </div>
         </div>
     </div>
@@ -907,20 +891,20 @@ padding: 20px;
     <div id="faq-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="faq-modal-title">✏️ Add Question</h2>
+                <h2 class="modal-title" id="faq-modal-title">✏️ Añadir Pregunta</h2>
                 <button class="close-btn" onclick="closeFAQModal()">&times;</button>
             </div>
             <div class="input-group">
-                <label>Question</label>
-                <input type="text" class="input" id="faq-question-input" placeholder="Enter your question">
+                <label>Pregunta</label>
+                <input type="text" class="input" id="faq-question-input" placeholder="Ingresa tu pregunta">
             </div>
             <div class="input-group">
-                <label>Answer</label>
-                <textarea class="textarea" id="faq-answer-input" placeholder="Enter the answer" rows="4"></textarea>
+                <label>Respuesta</label>
+                <textarea class="textarea" id="faq-answer-input" placeholder="Ingresa la respuesta" rows="4"></textarea>
             </div>
             <div style="display: flex; gap: 10px; justify-content: flex-end;">
-                <button class="btn btn-secondary" onclick="closeFAQModal()">Cancel</button>
-                <button class="btn btn-primary" onclick="saveFAQ()">Save</button>
+                <button class="btn btn-secondary" onclick="closeFAQModal()">Cancelar</button>
+                <button class="btn btn-primary" onclick="saveFAQ()">Guardar</button>
             </div>
         </div>
     </div>
